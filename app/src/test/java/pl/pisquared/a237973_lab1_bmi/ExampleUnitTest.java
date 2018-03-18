@@ -83,6 +83,13 @@ public class ExampleUnitTest
     }
 
     @Test
+    public void for_provided_bmi_should_return_correct_color2_kgm()
+    {
+        BMI bmi = new BMIForKgM(120, 1.89);
+        assertEquals(BMI.ORANGE_COLOR, BMI.getBMIColor(bmi.calculateBMI()));
+    }
+
+    @Test
     public void kilograms_to_pounds_convert_test()
     {
         assertEquals(123.4589, UnitsUtils.kilogramsToPounds(56), 0.001);

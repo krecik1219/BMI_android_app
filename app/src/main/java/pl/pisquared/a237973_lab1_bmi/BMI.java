@@ -13,6 +13,10 @@ public abstract class BMI
     protected static final int RED_COLOR = 0xffff0000;
     protected double mass;
     protected double height;
+    private static final double MIN_LIMIT_BMI_NORMAL_WEIGHT = 18.5;
+    private static final double MIN_LIMIT_BMI_OVERWEIGHT = 25;
+    private static final double MIN_LIMIT_BMI_OBESE = 30;
+    private static final double MIN_LIMIT_BMI__HIGH_OBESE = 40;
 
     public BMI(double mass, double height)
     {
@@ -23,13 +27,13 @@ public abstract class BMI
     public static int getBMIColor(double bmi)
     {
         int bmiColor = 0;
-        if(bmi<18.5)
+        if(bmi<MIN_LIMIT_BMI_NORMAL_WEIGHT)
             bmiColor = BMI.AQUA_COLOR;
-        else if(bmi>=18.5 && bmi <25)
+        else if(bmi>=MIN_LIMIT_BMI_NORMAL_WEIGHT && bmi <MIN_LIMIT_BMI_OVERWEIGHT)
             bmiColor = BMI.LIME_COLOR;
-        else if (bmi>=25 && bmi<30)
+        else if (bmi>=MIN_LIMIT_BMI_OVERWEIGHT && bmi<MIN_LIMIT_BMI_OBESE)
             bmiColor = BMI.YELLOW_COLOR;
-        else if(bmi>=30 && bmi<40)
+        else if(bmi>=MIN_LIMIT_BMI_OBESE && bmi<MIN_LIMIT_BMI__HIGH_OBESE)
             bmiColor = BMI.ORANGE_COLOR;
         else
             bmiColor = BMI.RED_COLOR;
